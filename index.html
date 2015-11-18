@@ -6,8 +6,21 @@
   jelou güorld<br><br>
   <p>
     Algunas apps:<br>
-    <button>Instalar tetrix dash fxos</button>
-    <button>Instalar plants vs zombies fxos</button>
+    <button onclick="installapp('tetrix-dash')">Instalar tetrix dash fxos</button>
+    <button onclick="installapp('plants-vs-zombies')">Instalar plants vs zombies fxos</button>
   </p>
+  <script>
+      var appname;
+    	function installapp(appname){
+			var manifestUrl = 'http://www.torzap.com.mx/apps/'+appname+'.webapp';
+			var req = navigator.mozApps.installPackage(manifestUrl);
+			req.onsuccess = function() {
+				alert(this.result.origin);
+			};
+			 req.onerror = function() {
+				alert('Instalación fallida, error: ' + this.error.name);
+			};
+		};
+  </script>
 </body>
 </html>

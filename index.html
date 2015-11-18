@@ -1,6 +1,7 @@
 <!Doctype html><html>
 <head>
   <title>VegnuxMod</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 </head>
 <body>
   jelou güorld<br><br>
@@ -18,8 +19,7 @@
             alert(this.result.origin);
         };
         req.onerror = function() {
-            alert('Instalación fallida, error: ' + this.error.name);
-            alert(manifestUrl);
+            alert('Instalación fallida, error: ' + this.error.name + '\nRepo: ' + manifestUrl);
         };
     };
   </script>
